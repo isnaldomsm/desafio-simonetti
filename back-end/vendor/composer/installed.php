@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'f7ba44bd5cba50d3d73bbbbfea7802bfa949740a',
+    'reference' => '1efc112e42d106bef3ebaa99bbd111c78849331a',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f7ba44bd5cba50d3d73bbbbfea7802bfa949740a',
+      'reference' => '1efc112e42d106bef3ebaa99bbd111c78849331a',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -200,6 +200,15 @@
       ),
       'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
     ),
+    'nikic/php-parser' => 
+    array (
+      'pretty_version' => 'v4.10.4',
+      'version' => '4.10.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c6d052fc58cb876152f89f532b95a8d7907e7f0e',
+    ),
     'ocramius/package-versions' => 
     array (
       'replaced' => 
@@ -344,6 +353,15 @@
       ),
       'reference' => '3860f64c6deb2cb48b1ada27460c58ae479bdc0f',
     ),
+    'symfony/deprecation-contracts' => 
+    array (
+      'pretty_version' => 'v2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5fa56b4074d1ae755beb55617ddafe6f5d78f665',
+    ),
     'symfony/doctrine-bridge' => 
     array (
       'pretty_version' => 'v4.4.18',
@@ -458,6 +476,15 @@
       array (
       ),
       'reference' => 'eaff9a43e74513508867ecfa66ef94fbb96ab128',
+    ),
+    'symfony/maker-bundle' => 
+    array (
+      'pretty_version' => 'v1.28.0',
+      'version' => '1.28.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6f4d27a68c92179c124f5331a27e32d197c9bd59',
     ),
     'symfony/mime' => 
     array (
