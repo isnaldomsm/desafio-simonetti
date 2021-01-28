@@ -4,4 +4,5 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format'], ['variable', '/', '\\d+', 'code'], ['text', '/_error']], [], []],
+    'articles' => [[], ['_controller' => 'App\\Controller\\ArticlesController::index'], [], [['text', '/articles']], [], []],
 ];

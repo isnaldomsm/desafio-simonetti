@@ -12,9 +12,9 @@ class ComposerStaticInit1258ec7a09087789dd85dfc570d10b38
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
     );
 
@@ -63,12 +63,22 @@ class ComposerStaticInit1258ec7a09087789dd85dfc570d10b38
             'ProxyManager\\' => 13,
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
+            'PHPStan\\PhpDocParser\\' => 21,
+        ),
+        'M' => 
+        array (
+            'Metadata\\' => 9,
         ),
         'L' => 
         array (
             'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\EventManager\\' => 21,
             'Laminas\\Code\\' => 13,
+        ),
+        'J' => 
+        array (
+            'JMS\\Serializer\\' => 15,
+            'JMS\\SerializerBundle\\' => 21,
         ),
         'D' => 
         array (
@@ -251,6 +261,14 @@ class ComposerStaticInit1258ec7a09087789dd85dfc570d10b38
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
+        'Metadata\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jms/metadata/src',
+        ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
@@ -262,6 +280,14 @@ class ComposerStaticInit1258ec7a09087789dd85dfc570d10b38
         'Laminas\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
+        ),
+        'JMS\\Serializer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jms/serializer/src',
+        ),
+        'JMS\\SerializerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jms/serializer-bundle',
         ),
         'Doctrine\\SqlFormatter\\' => 
         array (
