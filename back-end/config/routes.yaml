@@ -1,3 +1,7 @@
-index:
+articles:
    path: /api/v1/articles
    controller: App\Controller\ArticlesController::index
+
+article:
+   path: /api/v1/articles/{id}
+   controller: App\Controller\ArticlesController::show
