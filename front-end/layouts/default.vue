@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <nuxt />
   </div>
 </template>
 <script>
@@ -67,4 +68,5 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
 </style>

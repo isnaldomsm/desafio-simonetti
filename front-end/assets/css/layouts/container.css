@@ -1,0 +1,132 @@
+
+.box-1{
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    height: 320px;
+		    width: 50%;
+		    float: left;
+		    margin: 60px 0 80px 0;
+		    boxShadow: 0px 6px 10px rgba(0,0,0,0.1);
+
+
+}
+.box-2{
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-flex: 1;
+	    -ms-flex: 1;
+	    flex: 1;
+	    width: 50%;
+	    background-color: #FFFFFF;
+	    box-shadow: 0px 6px 10px rgb(0 0 0 10%);
+}
+.box-3{
+		display: -webkit-box;
+   		display: -webkit-flex;
+    	display: -ms-flexbox;
+    	display: flex;
+}
+.box-3 img{
+		max-width: 40%;
+   		height: auto;
+}
+.box-4{
+		padding: 30px 30px 0px 50px;
+	    width: -webkit-fit-content;
+	    width: -moz-fit-content;
+	    width: fit-content;
+	    height: 290px;
+}
+.box-4 p{
+		margin: 10px 0;
+    	color: #2D2D2D;
+}
+.box-4 a{
+		position: relative;
+    	width: 0px;
+    	height: 0px;
+}
+.box-4 h2{
+		color: #F1A10A;
+    	margin-bottom: 10px;
+}
+.box-4 .box-text{
+		font-size: x-small;
+    	color: #2D2D2D;
+}
+.box-large{
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    float: right;
+	    width: 80%;
+	    height: 640px;
+	    background-color: #ffffff;
+	    box-shadow: 0px 6px 10px rgb(0 0 0 / 10%);
+}
+.large-text{
+		width: 100%;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    -webkit-box-pack: center;
+	    -webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+	    padding: 40px 80px 40px 60px;
+	    min-width: 200px;
+}
+.large-text p{
+		margin: 20px 0;
+    	color: #2D2D2D;
+}
+.large-text h2{
+		margin-bottom: 10px;
+    	color: #F1A10A;
+}
+.large-text .text{
+		font-size: small;
+    	color: #2D2D2D;
+}
+@media (max-width: 80rem){
+		.content{
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    float: top;
+		    width: 100%;
+		    margin: 30px 0 40px 0;			
+		}
+		.box-1{
+		    display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    float: top;
+		    width: 100%;
+		    margin: 30px 0 40px 0;
+		}
+		.box-large{
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    height: 450px;
+		    -webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		    flex-direction: column;
+		}
+		.box-large img{
+			max-width: 220px;
+		}
+}

@@ -17,8 +17,9 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-     '@/assets/css/layouts/top.css',
+      '@/assets/css/layouts/top.css',
       '@/assets/css/layouts/body.css',
+      '@/assets/css/layouts/container.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -36,6 +37,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
