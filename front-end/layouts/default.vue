@@ -1,9 +1,17 @@
 <template>
   <div>
-    <Nuxt />
+    <Header />
   </div>
 </template>
+<script>
+import Header from './partials/Header.vue'
 
+export default {
+  components: {
+    Header
+  }
+}
+</script>
 <style>
 html {
   font-family:
