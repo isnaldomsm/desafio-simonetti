@@ -20,10 +20,13 @@ export default {
       '@/assets/css/layouts/top.css',
       '@/assets/css/layouts/body.css',
       '@/assets/css/layouts/container.css',
+      '@/assets/css/layouts/articles.css',
+      '@/assets/css/layouts/modal.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/vue-js-modal.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

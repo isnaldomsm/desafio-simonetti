@@ -2,6 +2,8 @@
   <div>
     <Header />
     <nuxt />
+    
+  </div>
   </div>
 </template>
 <script>
@@ -68,5 +70,13 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+.modal-fade-enter,
+  .modal-fade-leave-active {
+    opacity: 0;
+  }
 
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+    transition: opacity .5s ease
+  }
 </style>
