@@ -2,9 +2,9 @@
   export default {
     name: 'modal',
     methods: {
-      // close() {
-      //   this.$emit('close');
-      // },
+      close() {
+        this.$emit('close');
+      },
     },
   };
 </script>
@@ -153,7 +153,8 @@
   const axios = require('axios')
  // var moment = require('moment');
   export default {
-   
+   name: 'modal',
+    
     components: {
       modal,
     },
@@ -171,6 +172,9 @@
       // this.showmodal();
     },
     methods: {
+      close() {
+        this.$emit('close');
+      },
       showmodal() {
         this.isModalVisible = true;
       },

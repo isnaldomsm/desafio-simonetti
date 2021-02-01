@@ -15,7 +15,7 @@
               <a 
                 :href="article.id" 
               >
-                <h2 class="sc-kEjbxe lkfIbP">Ut eveniet eum dicta.</h2></a
+                <h2 class="">{{ article.author }}</h2></a
               >
               <div class="box-text">
                 {{ article.article }}
@@ -37,7 +37,7 @@
           <a 
             :href="article.id" 
           >
-            <h2 class="sc-kEjbxe lkfIbP">Ut eveniet eum dicta.</h2>
+            <h2 class="sc-kEjbxe lkfIbP">{{ article.author }}</h2>
           </a
           >
           <div class="text">
