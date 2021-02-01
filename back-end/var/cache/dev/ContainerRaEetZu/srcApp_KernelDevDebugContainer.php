@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerNiEqaxS;
+namespace ContainerRaEetZu;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -39,6 +39,7 @@ class srcApp_KernelDevDebugContainer extends Container
         ];
         $this->methodMap = [
             'App\\Controller\\ArticlesController' => 'getArticlesControllerService',
+            'App\\Controller\\ContactController' => 'getContactControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService',
             'cache.app' => 'getCache_AppService',
@@ -175,23 +176,25 @@ class srcApp_KernelDevDebugContainer extends Container
 
         $this->services['App\\Controller\\ArticlesController'] = $instance = new \App\Controller\ArticlesController();
 
-        $instance->setContainer((new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'doctrine' => ['services', 'doctrine', 'getDoctrineService', false],
-            'http_kernel' => ['services', 'http_kernel', 'getHttpKernelService', false],
-            'parameter_bag' => ['privates', 'parameter_bag', 'getParameterBagService', false],
-            'request_stack' => ['services', 'request_stack', 'getRequestStackService', false],
-            'router' => ['services', 'router', 'getRouterService', false],
-            'serializer' => ['services', 'serializer', 'getSerializerService', false],
-            'session' => ['services', 'session', 'getSessionService', false],
-        ], [
-            'doctrine' => '?',
-            'http_kernel' => '?',
-            'parameter_bag' => '?',
-            'request_stack' => '?',
-            'router' => '?',
-            'serializer' => '?',
-            'session' => '?',
-        ]))->withContext('App\\Controller\\ArticlesController', $this));
+        $instance->setContainer(($this->privates['.service_locator.vdmMuyE'] ?? $this->get_ServiceLocator_VdmMuyEService())->withContext('App\\Controller\\ArticlesController', $this));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'App\Controller\ContactController' shared autowired service.
+     *
+     * @return \App\Controller\ContactController
+     */
+    protected function getContactControllerService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/framework-bundle/Controller/ControllerTrait.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/framework-bundle/Controller/AbstractController.php';
+        include_once \dirname(__DIR__, 4).'/src/Controller/ContactController.php';
+
+        $this->services['App\\Controller\\ContactController'] = $instance = new \App\Controller\ContactController();
+
+        $instance->setContainer(($this->privates['.service_locator.vdmMuyE'] ?? $this->get_ServiceLocator_VdmMuyEService())->withContext('App\\Controller\\ContactController', $this));
 
         return $instance;
     }
@@ -689,8 +692,10 @@ class srcApp_KernelDevDebugContainer extends Container
         $a->setEntityListenerResolver(new \Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver($this));
         $a->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
             'App\\Repository\\ArticlesRepository' => ['privates', 'App\\Repository\\ArticlesRepository', 'getArticlesRepositoryService', false],
+            'App\\Repository\\ContactRepository' => ['privates', 'App\\Repository\\ContactRepository', 'getContactRepositoryService', false],
         ], [
             'App\\Repository\\ArticlesRepository' => '?',
+            'App\\Repository\\ContactRepository' => '?',
         ])));
 
         $instance = \Doctrine\ORM\EntityManager::create(($this->services['doctrine.dbal.default_connection'] ?? $this->getDoctrine_Dbal_DefaultConnectionService()), $a);
@@ -1065,6 +1070,32 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private '.service_locator.vdmMuyE' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_VdmMuyEService()
+    {
+        return $this->privates['.service_locator.vdmMuyE'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'doctrine' => ['services', 'doctrine', 'getDoctrineService', false],
+            'http_kernel' => ['services', 'http_kernel', 'getHttpKernelService', false],
+            'parameter_bag' => ['privates', 'parameter_bag', 'getParameterBagService', false],
+            'request_stack' => ['services', 'request_stack', 'getRequestStackService', false],
+            'router' => ['services', 'router', 'getRouterService', false],
+            'serializer' => ['services', 'serializer', 'getSerializerService', false],
+            'session' => ['services', 'session', 'getSessionService', false],
+        ], [
+            'doctrine' => '?',
+            'http_kernel' => '?',
+            'parameter_bag' => '?',
+            'request_stack' => '?',
+            'router' => '?',
+            'serializer' => '?',
+            'session' => '?',
+        ]);
+    }
+
+    /**
      * Gets the private 'App\Repository\ArticlesRepository' shared autowired service.
      *
      * @return \App\Repository\ArticlesRepository
@@ -1079,6 +1110,23 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/src/Repository/ArticlesRepository.php';
 
         return $this->privates['App\\Repository\\ArticlesRepository'] = new \App\Repository\ArticlesRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\ContactRepository' shared autowired service.
+     *
+     * @return \App\Repository\ContactRepository
+     */
+    protected function getContactRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/ContactRepository.php';
+
+        return $this->privates['App\\Repository\\ContactRepository'] = new \App\Repository\ContactRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
     }
 
     /**

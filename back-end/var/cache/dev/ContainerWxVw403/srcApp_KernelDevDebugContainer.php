@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerWMSH1N0;
+namespace ContainerWxVw403;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -689,8 +689,10 @@ class srcApp_KernelDevDebugContainer extends Container
         $a->setEntityListenerResolver(new \Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver($this));
         $a->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
             'App\\Repository\\ArticlesRepository' => ['privates', 'App\\Repository\\ArticlesRepository', 'getArticlesRepositoryService', false],
+            'App\\Repository\\ContactRepository' => ['privates', 'App\\Repository\\ContactRepository', 'getContactRepositoryService', false],
         ], [
             'App\\Repository\\ArticlesRepository' => '?',
+            'App\\Repository\\ContactRepository' => '?',
         ])));
 
         $instance = \Doctrine\ORM\EntityManager::create(($this->services['doctrine.dbal.default_connection'] ?? $this->getDoctrine_Dbal_DefaultConnectionService()), $a);
@@ -1079,6 +1081,23 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/src/Repository/ArticlesRepository.php';
 
         return $this->privates['App\\Repository\\ArticlesRepository'] = new \App\Repository\ArticlesRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\ContactRepository' shared autowired service.
+     *
+     * @return \App\Repository\ContactRepository
+     */
+    protected function getContactRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/ContactRepository.php';
+
+        return $this->privates['App\\Repository\\ContactRepository'] = new \App\Repository\ContactRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
     }
 
     /**
@@ -3358,298 +3377,298 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
     /**
      * @var \Doctrine\ORM\EntityManager|null wrapped object, if the proxy is initialized
      */
-    private $valueHolderd0b7a = null;
+    private $valueHolderff7f0 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializerf672e = null;
+    private $initializer22d3b = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties18c27 = [
+    private static $publicProperties7d63b = [
         
     ];
 
     public function getConnection()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getConnection', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getConnection', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getConnection();
+        return $this->valueHolderff7f0->getConnection();
     }
 
     public function getMetadataFactory()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getMetadataFactory', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getMetadataFactory', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getMetadataFactory();
+        return $this->valueHolderff7f0->getMetadataFactory();
     }
 
     public function getExpressionBuilder()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getExpressionBuilder', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getExpressionBuilder', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getExpressionBuilder();
+        return $this->valueHolderff7f0->getExpressionBuilder();
     }
 
     public function beginTransaction()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'beginTransaction', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'beginTransaction', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->beginTransaction();
+        return $this->valueHolderff7f0->beginTransaction();
     }
 
     public function getCache()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getCache', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getCache', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getCache();
+        return $this->valueHolderff7f0->getCache();
     }
 
     public function transactional($func)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'transactional', array('func' => $func), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'transactional', array('func' => $func), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->transactional($func);
+        return $this->valueHolderff7f0->transactional($func);
     }
 
     public function commit()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'commit', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'commit', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->commit();
+        return $this->valueHolderff7f0->commit();
     }
 
     public function rollback()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'rollback', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'rollback', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->rollback();
+        return $this->valueHolderff7f0->rollback();
     }
 
     public function getClassMetadata($className)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getClassMetadata', array('className' => $className), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getClassMetadata', array('className' => $className), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getClassMetadata($className);
+        return $this->valueHolderff7f0->getClassMetadata($className);
     }
 
     public function createQuery($dql = '')
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'createQuery', array('dql' => $dql), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'createQuery', array('dql' => $dql), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->createQuery($dql);
+        return $this->valueHolderff7f0->createQuery($dql);
     }
 
     public function createNamedQuery($name)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'createNamedQuery', array('name' => $name), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'createNamedQuery', array('name' => $name), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->createNamedQuery($name);
+        return $this->valueHolderff7f0->createNamedQuery($name);
     }
 
     public function createNativeQuery($sql, \Doctrine\ORM\Query\ResultSetMapping $rsm)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'createNativeQuery', array('sql' => $sql, 'rsm' => $rsm), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'createNativeQuery', array('sql' => $sql, 'rsm' => $rsm), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->createNativeQuery($sql, $rsm);
+        return $this->valueHolderff7f0->createNativeQuery($sql, $rsm);
     }
 
     public function createNamedNativeQuery($name)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'createNamedNativeQuery', array('name' => $name), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'createNamedNativeQuery', array('name' => $name), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->createNamedNativeQuery($name);
+        return $this->valueHolderff7f0->createNamedNativeQuery($name);
     }
 
     public function createQueryBuilder()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'createQueryBuilder', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'createQueryBuilder', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->createQueryBuilder();
+        return $this->valueHolderff7f0->createQueryBuilder();
     }
 
     public function flush($entity = null)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'flush', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'flush', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->flush($entity);
+        return $this->valueHolderff7f0->flush($entity);
     }
 
     public function find($className, $id, $lockMode = null, $lockVersion = null)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'find', array('className' => $className, 'id' => $id, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'find', array('className' => $className, 'id' => $id, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->find($className, $id, $lockMode, $lockVersion);
+        return $this->valueHolderff7f0->find($className, $id, $lockMode, $lockVersion);
     }
 
     public function getReference($entityName, $id)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getReference', array('entityName' => $entityName, 'id' => $id), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getReference', array('entityName' => $entityName, 'id' => $id), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getReference($entityName, $id);
+        return $this->valueHolderff7f0->getReference($entityName, $id);
     }
 
     public function getPartialReference($entityName, $identifier)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getPartialReference', array('entityName' => $entityName, 'identifier' => $identifier), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getPartialReference', array('entityName' => $entityName, 'identifier' => $identifier), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getPartialReference($entityName, $identifier);
+        return $this->valueHolderff7f0->getPartialReference($entityName, $identifier);
     }
 
     public function clear($entityName = null)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'clear', array('entityName' => $entityName), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'clear', array('entityName' => $entityName), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->clear($entityName);
+        return $this->valueHolderff7f0->clear($entityName);
     }
 
     public function close()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'close', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'close', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->close();
+        return $this->valueHolderff7f0->close();
     }
 
     public function persist($entity)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'persist', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'persist', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->persist($entity);
+        return $this->valueHolderff7f0->persist($entity);
     }
 
     public function remove($entity)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'remove', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'remove', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->remove($entity);
+        return $this->valueHolderff7f0->remove($entity);
     }
 
     public function refresh($entity)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'refresh', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'refresh', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->refresh($entity);
+        return $this->valueHolderff7f0->refresh($entity);
     }
 
     public function detach($entity)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'detach', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'detach', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->detach($entity);
+        return $this->valueHolderff7f0->detach($entity);
     }
 
     public function merge($entity)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'merge', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'merge', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->merge($entity);
+        return $this->valueHolderff7f0->merge($entity);
     }
 
     public function copy($entity, $deep = false)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'copy', array('entity' => $entity, 'deep' => $deep), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'copy', array('entity' => $entity, 'deep' => $deep), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->copy($entity, $deep);
+        return $this->valueHolderff7f0->copy($entity, $deep);
     }
 
     public function lock($entity, $lockMode, $lockVersion = null)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'lock', array('entity' => $entity, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'lock', array('entity' => $entity, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->lock($entity, $lockMode, $lockVersion);
+        return $this->valueHolderff7f0->lock($entity, $lockMode, $lockVersion);
     }
 
     public function getRepository($entityName)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getRepository', array('entityName' => $entityName), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getRepository', array('entityName' => $entityName), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getRepository($entityName);
+        return $this->valueHolderff7f0->getRepository($entityName);
     }
 
     public function contains($entity)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'contains', array('entity' => $entity), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'contains', array('entity' => $entity), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->contains($entity);
+        return $this->valueHolderff7f0->contains($entity);
     }
 
     public function getEventManager()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getEventManager', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getEventManager', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getEventManager();
+        return $this->valueHolderff7f0->getEventManager();
     }
 
     public function getConfiguration()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getConfiguration', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getConfiguration', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getConfiguration();
+        return $this->valueHolderff7f0->getConfiguration();
     }
 
     public function isOpen()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'isOpen', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'isOpen', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->isOpen();
+        return $this->valueHolderff7f0->isOpen();
     }
 
     public function getUnitOfWork()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getUnitOfWork', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getUnitOfWork', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getUnitOfWork();
+        return $this->valueHolderff7f0->getUnitOfWork();
     }
 
     public function getHydrator($hydrationMode)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getHydrator', array('hydrationMode' => $hydrationMode), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getHydrator', array('hydrationMode' => $hydrationMode), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getHydrator($hydrationMode);
+        return $this->valueHolderff7f0->getHydrator($hydrationMode);
     }
 
     public function newHydrator($hydrationMode)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'newHydrator', array('hydrationMode' => $hydrationMode), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'newHydrator', array('hydrationMode' => $hydrationMode), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->newHydrator($hydrationMode);
+        return $this->valueHolderff7f0->newHydrator($hydrationMode);
     }
 
     public function getProxyFactory()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getProxyFactory', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getProxyFactory', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getProxyFactory();
+        return $this->valueHolderff7f0->getProxyFactory();
     }
 
     public function initializeObject($obj)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'initializeObject', array('obj' => $obj), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'initializeObject', array('obj' => $obj), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->initializeObject($obj);
+        return $this->valueHolderff7f0->initializeObject($obj);
     }
 
     public function getFilters()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'getFilters', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'getFilters', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->getFilters();
+        return $this->valueHolderff7f0->getFilters();
     }
 
     public function isFiltersStateClean()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'isFiltersStateClean', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'isFiltersStateClean', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->isFiltersStateClean();
+        return $this->valueHolderff7f0->isFiltersStateClean();
     }
 
     public function hasFilters()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'hasFilters', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'hasFilters', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return $this->valueHolderd0b7a->hasFilters();
+        return $this->valueHolderff7f0->hasFilters();
     }
 
     /**
@@ -3668,7 +3687,7 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
             unset($instance->config, $instance->conn, $instance->metadataFactory, $instance->unitOfWork, $instance->eventManager, $instance->proxyFactory, $instance->repositoryFactory, $instance->expressionBuilder, $instance->closed, $instance->filterCollection, $instance->cache);
         }, $instance, 'Doctrine\\ORM\\EntityManager')->__invoke($instance);
 
-        $instance->initializerf672e = $initializer;
+        $instance->initializer22d3b = $initializer;
 
         return $instance;
     }
@@ -3677,30 +3696,30 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
     {
         static $reflection;
 
-        if (! $this->valueHolderd0b7a) {
+        if (! $this->valueHolderff7f0) {
             $reflection = $reflection ?? new \ReflectionClass('Doctrine\\ORM\\EntityManager');
-            $this->valueHolderd0b7a = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolderff7f0 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Doctrine\ORM\EntityManager $instance) {
             unset($instance->config, $instance->conn, $instance->metadataFactory, $instance->unitOfWork, $instance->eventManager, $instance->proxyFactory, $instance->repositoryFactory, $instance->expressionBuilder, $instance->closed, $instance->filterCollection, $instance->cache);
         }, $this, 'Doctrine\\ORM\\EntityManager')->__invoke($this);
 
         }
 
-        $this->valueHolderd0b7a->__construct($conn, $config, $eventManager);
+        $this->valueHolderff7f0->__construct($conn, $config, $eventManager);
     }
 
     public function & __get($name)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, '__get', ['name' => $name], $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, '__get', ['name' => $name], $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        if (isset(self::$publicProperties18c27[$name])) {
-            return $this->valueHolderd0b7a->$name;
+        if (isset(self::$publicProperties7d63b[$name])) {
+            return $this->valueHolderff7f0->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass('Doctrine\\ORM\\EntityManager');
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolderd0b7a;
+            $targetObject = $this->valueHolderff7f0;
 
             $backtrace = debug_backtrace(false, 1);
             trigger_error(
@@ -3716,7 +3735,7 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
             return $targetObject->$name;
         }
 
-        $targetObject = $this->valueHolderd0b7a;
+        $targetObject = $this->valueHolderff7f0;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -3730,19 +3749,19 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
 
     public function __set($name, $value)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, '__set', array('name' => $name, 'value' => $value), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
         $realInstanceReflection = new \ReflectionClass('Doctrine\\ORM\\EntityManager');
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolderd0b7a;
+            $targetObject = $this->valueHolderff7f0;
 
             $targetObject->$name = $value;
 
             return $targetObject->$name;
         }
 
-        $targetObject = $this->valueHolderd0b7a;
+        $targetObject = $this->valueHolderff7f0;
         $accessor = function & () use ($targetObject, $name, $value) {
             $targetObject->$name = $value;
 
@@ -3758,17 +3777,17 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
 
     public function __isset($name)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, '__isset', array('name' => $name), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, '__isset', array('name' => $name), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
         $realInstanceReflection = new \ReflectionClass('Doctrine\\ORM\\EntityManager');
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolderd0b7a;
+            $targetObject = $this->valueHolderff7f0;
 
             return isset($targetObject->$name);
         }
 
-        $targetObject = $this->valueHolderd0b7a;
+        $targetObject = $this->valueHolderff7f0;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -3782,19 +3801,19 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
 
     public function __unset($name)
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, '__unset', array('name' => $name), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, '__unset', array('name' => $name), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
         $realInstanceReflection = new \ReflectionClass('Doctrine\\ORM\\EntityManager');
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolderd0b7a;
+            $targetObject = $this->valueHolderff7f0;
 
             unset($targetObject->$name);
 
             return;
         }
 
-        $targetObject = $this->valueHolderd0b7a;
+        $targetObject = $this->valueHolderff7f0;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
 
@@ -3808,16 +3827,16 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
 
     public function __clone()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, '__clone', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, '__clone', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        $this->valueHolderd0b7a = clone $this->valueHolderd0b7a;
+        $this->valueHolderff7f0 = clone $this->valueHolderff7f0;
     }
 
     public function __sleep()
     {
-        $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, '__sleep', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, '__sleep', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
 
-        return array('valueHolderd0b7a');
+        return array('valueHolderff7f0');
     }
 
     public function __wakeup()
@@ -3829,27 +3848,27 @@ class EntityManager_9a5be93 extends \Doctrine\ORM\EntityManager implements \Prox
 
     public function setProxyInitializer(\Closure $initializer = null) : void
     {
-        $this->initializerf672e = $initializer;
+        $this->initializer22d3b = $initializer;
     }
 
     public function getProxyInitializer() : ?\Closure
     {
-        return $this->initializerf672e;
+        return $this->initializer22d3b;
     }
 
     public function initializeProxy() : bool
     {
-        return $this->initializerf672e && ($this->initializerf672e->__invoke($valueHolderd0b7a, $this, 'initializeProxy', array(), $this->initializerf672e) || 1) && $this->valueHolderd0b7a = $valueHolderd0b7a;
+        return $this->initializer22d3b && ($this->initializer22d3b->__invoke($valueHolderff7f0, $this, 'initializeProxy', array(), $this->initializer22d3b) || 1) && $this->valueHolderff7f0 = $valueHolderff7f0;
     }
 
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolderd0b7a;
+        return null !== $this->valueHolderff7f0;
     }
 
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolderd0b7a;
+        return $this->valueHolderff7f0;
     }
 
 

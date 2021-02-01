@@ -9,6 +9,8 @@ return [
     false, // $matchHost
     [ // $staticRoutes
         '/api/v1/articles' => [[['_route' => 'articles', '_controller' => 'App\\Controller\\ArticlesController::index'], null, null, null, false, false, null]],
+        '/api/v1/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\ContactController::register'], null, ['POST' => 0], null, false, false, null]],
+        '/api/v1/register/show' => [[['_route' => 'registershow', '_controller' => 'App\\Controller\\ContactController::show'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

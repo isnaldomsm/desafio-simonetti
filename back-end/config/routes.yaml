@@ -5,3 +5,12 @@ articles:
 article:
    path: /api/v1/articles/{id}
    controller: App\Controller\ArticlesController::show
+
+register:
+   path: /api/v1/register
+   controller: App\Controller\ContactController::register
+   methods:  [POST]
+registershow:
+   path: /api/v1/register/show
+   controller: App\Controller\ContactController::show
+   

@@ -18,7 +18,8 @@
 </template>
 <script>
   import modal from '/components/modal.vue';
-
+  const axios = require('axios')
+ // var moment = require('moment');
   export default {
    
     components: {
@@ -27,6 +28,11 @@
     data () {
       return {
         isModalVisible: false,
+        name:   '',
+        email:  '',
+        phone:  '',
+        text:   ''
+
       };
     },
     mounted() {
@@ -38,7 +44,43 @@
       },
       closeModal() {
         this.isModalVisible = false;
+      },
+      envio_formulario: function(element1) {
+        var self = this;
+
+        var formData = new FormData();
+        formData.append('name',     self.name);
+        formData.append('email',     self.email);
+        formData.append('phone',     self.phone);
+        formData.append('text',     self.text);
+       
+
+        
+
+         
+          axios.post(urlrequest,
+            formData,
+            {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              }
+            }
+          ).then(function(response){
+            // console.log(response);
+            self.msg_success = response.data;
+            $('.msg-success').css("display", "block");
+            self.resertForm();
+            self.img_loading_check = 0;
+
+          }).catch(function (error){
+            // console.log(error);
+            self.msg_error = error.data;
+            $('.msg-error').css("display", "block");
+            self.resertForm();
+            self.img_loading_check = 0;
+          })
+        },
       }
-    },
-  };
+    }
+    
 </script>
